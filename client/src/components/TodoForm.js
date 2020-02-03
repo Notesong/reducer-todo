@@ -17,6 +17,7 @@ const TodoForm = ({ dispatch }) => {
 
     return (
         <div className="form-todo">
+                {/* form to add new todo */}
                 <form onSubmit={handleSubmit}>
                     <input
                         onChange={handleChanges}
@@ -27,6 +28,7 @@ const TodoForm = ({ dispatch }) => {
                     />
                     <button className='btn'>Add</button>                    
                 </form>
+                {/* button to clear all completed todos */}
                 <button className='btn' onClick={e => dispatch({ type: 'CLEAR_COMPLETED' }) }>
                     Delete Selected
                 </button>

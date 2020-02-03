@@ -8,8 +8,10 @@ const TodoList = () => {
 
     return (
         <div className="todo-section">
+            {/* display form */}
             <TodoForm dispatch={dispatch} />
             <div className="todo-list">
+                {/* display todo list */}
                 {state.map(item => (
                     <Todo 
                         item={item} 
