@@ -4,15 +4,15 @@ const TodoForm = ({ dispatch }) => {
     const [newTodo, setNewTodo] = useState('');
     const [tags, setTags] = useState('');
 
-    // handles any input changes in the new task form
+    // handles any todo input changes in the new todo form
     const handleChangesTodo = e => {
         setNewTodo(e.target.value);
     };
-    // handles any input changes in the new task form
+    // handles any tag input changes in the new todo form
     const handleChangesTags = e => {
         setTags(e.target.value);
     };
-    // adds the new task to the task list and resets the input field
+    // adds the new task and tags to the task list and resets the input fields
     const handleSubmit = e => {
         e.preventDefault();
         dispatch({ type: 'ADD_TODO', payload: { newTodo: newTodo, tags: tags } });

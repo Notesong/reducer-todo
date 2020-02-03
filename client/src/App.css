@@ -56,7 +56,7 @@ input[type=text] {
 }
 
 .todo {
-  background-color: #35934C;
+  background-color: rgb(36, 129, 129);
   border: none;
   color: white;
   padding: 1rem;
@@ -66,15 +66,27 @@ input[type=text] {
   margin: 1rem;
   max-width: 35%;
   overflow-wrap: break-word;
+  cursor: default;
+  transition-duration: 0.3s;
+}
+
+.todo:hover {
+  background-color: rgb(40, 160, 160);
+  transition-duration: 0.3s;
 }
 
 .completed {
+  color: white;
   text-decoration: line-through;
   background-color: rgb(66, 66, 66);
 }
 
+.completed:hover {
+  transition-duration: 0s;
+}
+
 .tag {
-  background-color: rgb(36, 36, 36);
+  background-color: rgb(54, 54, 54);
   color: white;
   border: 0;
   border-radius: 0.5rem;
