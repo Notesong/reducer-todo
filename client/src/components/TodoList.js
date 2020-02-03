@@ -15,6 +15,7 @@ const TodoList = () => {
                         item={item} 
                         key={item.id} 
                         completed={item.completed}
+                        dispatch={dispatch}
                     />
                 ))}                
             </div>

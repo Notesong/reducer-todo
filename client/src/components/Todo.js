@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Todo = ({ item, toggleCompleted }) => {
+const Todo = ({ item, dispatch }) => {
     return (
         <div className="todo">
             <div 
                 // let user declare task completed by clicking it
-                onClick={e => toggleCompleted(item.id)}
+                onClick={e => dispatch({ type: 'TOGGLE_COMPLETED', payload: item.id}) }
                 // changes css based on whether task completed
                 className={`task${item.completed ? " completed" : ""}`}
             >

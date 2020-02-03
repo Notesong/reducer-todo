@@ -7,10 +7,7 @@ export const initialState = [{
 export const todoReducer = (state, action) => {
     switch (action.type) {
         case "ADD_TODO":
-            console.log("in add_todo");
-            console.log(state);
-            console.log(action);
-            const newState = [
+            const newAddState = [
                 ...state, 
                 {
                     task: action.payload,
@@ -18,8 +15,23 @@ export const todoReducer = (state, action) => {
                     id: Date.now()
                 }
             ];
-            console.log(newState);
-            return newState;
+            return newAddState;
+        case "TOGGLE_COMPLETED":
+            const newToggleState = state.map(item => {
+                if(item.id === action.payload) {
+                    return {
+                    ...item,
+                    completed: !item.completed
+                    };
+                }
+                return item;
+            });    
+            return newToggleState;
+        case "CLEAR_COMPLETED":
+            const newClearState = state.filter(item => {
+                  return !item.completed;
+            });
+            return(newClearState);
         default:
             return state;    
     }
