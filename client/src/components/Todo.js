@@ -1,9 +1,17 @@
 import React from 'react';
 
-const Todo = props => {
+const Todo = ({ item, toggleCompleted }) => {
     return (
         <div className="todo">
-            <h3>{props.item}</h3>
+            <div 
+                // let user declare task completed by clicking it
+                onClick={e => toggleCompleted(item.id)}
+                // changes css based on whether task completed
+                className={`task${item.completed ? " completed" : ""}`}
+            >
+                <p>{item.task}</p>
+            </div>
+
         </div>
     )
 };

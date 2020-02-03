@@ -1,5 +1,4 @@
 import React from 'react';
-import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import './App.css';
 
@@ -10,7 +9,6 @@ function App() {
         <h1>Todo</h1>
       </header>
       <section>
-        <TodoForm />
         <TodoList />
       </section>
     </div>
