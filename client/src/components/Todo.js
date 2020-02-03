@@ -1,4 +1,5 @@
 import React from 'react';
+import Tag from './Tag';
 
 const Todo = ({ item, dispatch }) => {
     return (
@@ -9,6 +10,12 @@ const Todo = ({ item, dispatch }) => {
             className={`todo${item.completed ? " completed" : ""}`}
         >
             <p>{item.task}</p>
+            {item.tags.map( tag => {
+                return <Tag 
+                    tag={tag}
+                    key={tag + item.id}
+                />
+            })}
 
         </div>
     )

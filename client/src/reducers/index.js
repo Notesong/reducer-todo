@@ -1,19 +1,28 @@
 export const initialState = [{
         task: 'Learn about reducers',
         completed: false,
-        id: 3892987589
+        id: 3892987589,
+        tags: ['education', 'programming']
     }];
 
 export const todoReducer = (state, action) => {
     switch (action.type) {
         // add a new todo to state
         case "ADD_TODO":
+            // set up variable to split up string of tags
+            let splitTags = [];
+            // check if there are any tags provided
+            // if there are, split them up into the array
+            if (action.payload.tags.length > 0) {
+                splitTags = action.payload.tags.split(',')
+            }
             const newAddState = [
                 ...state, 
                 {
-                    task: action.payload,
+                    task: action.payload.newTodo,
                     completed: false,
-                    id: Date.now()
+                    id: Date.now(),
+                    tags: splitTags
                 }
             ];
             return newAddState;

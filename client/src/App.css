@@ -11,10 +11,21 @@ h1 {
   padding: 2rem;
 }
 
+.todo-form-section {
+  display: flex;
+  justify-content:space-between;
+  align-items: flex-end;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.todo-form-section header {
+  text-align: center;
+}
+
 .form-todo {
   display: flex;
   justify-content: space-evenly;
-  max-width: 800px;
   margin: 0 auto;
   border: 1px black;
 }
@@ -60,4 +71,14 @@ input[type=text] {
 .completed {
   text-decoration: line-through;
   background-color: rgb(66, 66, 66);
+}
+
+.tag {
+  background-color: rgb(36, 36, 36);
+  color: white;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.4rem;
+  margin: 0.1rem;
+  font-size: 0.7rem;
 }
