@@ -13,7 +13,9 @@ const Todo = ({ item, dispatch }) => {
             {item.tags.map( tag => {
                 return <Tag 
                     tag={tag}
-                    key={tag + item.id}
+                    item={item}
+                    key={Date.now() + Math.floor(Math.random() * 100)}
+                    dispatch={dispatch}
                 />
             })}
 
